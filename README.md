@@ -1,8 +1,6 @@
 # BrowserBurner ♨️
 
-<a href="https://browserburner.com" target="_blank" rel="noopener noreferrer">
-  <img src="https://img.shields.io/badge/Visit%20Site-browserburner.com-brightgreen" alt="Visit browserburner.com">
-</a>
+[![Visit Site](https://img.shields.io/badge/Visit%20Site-browserburner.com-brightgreen)](https://browserburner.com)
 
 A simple, web-based CPU & GPU stress-testing tool. Its primary purpose is to push your hardware to its limits, generating load... and a surprising amount of heat.
 
