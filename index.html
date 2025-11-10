@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Space Heater</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"/>
+
+        <style>
+        #main-controls {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+        </style>
+    </head>
+    <body>
+
+        <dialog open id="warning-modal">
+            <article>
+                <header>
+                    <hgroup>
+                        <h2>⚠️  WARNING: USE AT YOUR OWN RISK</h2>
+                        <h3>This tool will push your hardware very hard.</h3>
+                    </hgroup>
+                </header>
+
+                <p>
+                    Running this can and will push your computer's <strong>CPU and GPU to 100% load</strong>.
+                    This can cause your system to <strong>freeze, crash, or become unresponsive</strong>.
+                </p>
+                <p>
+                    In rare cases, running this for extended periods on hardware with poor
+                    cooling could cause permanent damage. By running this tool, you
+                    ackowlege and accept those risks.
+                </p>
+                <p>
+                    <strong>Save all your work</strong> before starting this test.
+                </p>
+
+                <footer>
+                    <fieldset>
+                        <label for="confirm-check">
+                            <input type="checkbox" id="confirm-check">
+                            I have read and understood these warnings and accept all risks.
+                        </label>
+                    </fieldset>
+                    <button id="agree-button" class="contrast" disabled>I Agree</button>
+                </footer>
+            </article>
+        </dialog>
+        <main class="container" id="main-controls">
+            <h2 style="text-align: center;">Space Heater ♨️</h2>
+            <p>
+                Adjust the sliders and press 'Start' to begin loading your hardware.
+                Your computer fan will likely spin up.
+            </p>
+
+            <fieldset>
+                <div>
+                    <label for="coreSlider">CPU Cores to use: <b id="sliderValue">1</b></label>
+                    <input type="range" id="coreSlider" min="1" max="1" value="1">
+                </div>
+
+                <hr style="margin: 1rem 0;">
+
+                <div>
+                    <input type="checkbox" id="gpuCheckbox" name="gpuCheckbox">
+                    <label for="gpuCheckbox" style="display: inline; margin-left: 5px;">
+                        <b>Include GPU</b> (Uses WebGL)
+                    </label>
+                </div>
+
+                <div style="margin-top: 5px; margin-left: 20px;">
+                    <label for="gpuSlider">GPU Intensity (Canvas Size): <b id="gpuSliderValue">100x100</b></label>
+                    <input type="range" id="gpuSlider" min="10" max="500" value="100" step="10">
+                </div>
+            </fieldset>
+
+            <br>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; grid-gap: 1rem;">
+                <button id="startButton">Start</button>
+                <button id="stopButton" class="secondary">Stop</button>
+            </div>
+
+            <p id="status">Status: Idle</p>
+
+
+            <hr>
+            <section id="disclaimers">
+                <div class="grid">
+                    <div>
+                        <article>
+                            <header><strong>🐧 On System & Hardware</strong></header>
+                            <ul>
+                                <li>
+                                    <strong>High Power Use:</strong> This test will consume a large amount of electricity and will drain a laptop battery very quickly. Keep your laptop plugged in.
+                                </li>
+                                <li>
+                                    <strong>Heat & Fans:</strong> Your computer will get hot and your fans will become very loud. This is expected. Do not block your computer's air vents.
+                                </li>
+                                <li>
+                                    <strong>Throttling:</strong> If your system gets too hot, it will automatically slow itself down (called "thermal throttling") to prevent damage. This may cause the test to become less effective.
+                                </li>
+                                <li>
+                                    <strong>System Lag:</strong> While the test is running, your computer will be extremely sluggish. Even moving your mouse may be difficult. This is normal.
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+
+                    <div>
+                        <article>
+                            <header><strong>🛡️ On Security Software</strong></header>
+                            <ul>
+                                <li>
+                                    <strong>Security/Antivirus Warning:</strong> This tool works just like a malicious "cryptojacking" script.
+                                </li>
+                                <li>
+                                    Your antivirus software, browser, or ad-blocker (like uBlock Origin) may block this page or stop the scripts from running, thinking it's an attack.
+                                </li>
+                                <li>
+                                    You may need to temporarily disable your ad-blocker for this page or add an exception for it to work.
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <script src="main.js"></script>
+    </body>
+</html>
